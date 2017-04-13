@@ -2,8 +2,41 @@
 <html>
 <head>
 	<title></title>
+	<style >
+		div{
+			width: 200px;
+			height: 200px;
+			background: red;
+			display: none;
+			color: #fff;
+			text-align: center;
+			font: 22px/200px '微软雅黑';
+			margin-bottom: 20px;
+		}
+		.yellowbg{
+			background: yellow;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.0.js"></script>
+	<script>
+		$(function(){
+			inputs = $("input");
+			divs = $("div");
+			inputs.on("click",function(){
+				inputs.removeClass('yellowbg');
+				inputs.eq(inputs.index(this)).addClass('yellowbg');
+				divs.hide();
+				divs.eq(inputs.index(this)).show();
+			})
+		})
+	</script>
 </head>
 <body>
-
+	<div style="display: block">内容1</div>
+	<div>内容2</div>
+	<div>内容3</div>
+	<input class="yellowbg" type="button" name="" value="按钮1">
+	<input type="button" name="" value="按钮2">
+	<input type="button" name="" value="按钮3">
 </body>
 </html>
